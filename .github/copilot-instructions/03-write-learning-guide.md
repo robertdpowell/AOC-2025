@@ -1,23 +1,60 @@
-# Writing Learning Guides and Documenting Algorithms
+# Write Learning Guide
 
-## Introduction
-This guide aims to provide instructions for creating effective learning guides and documenting algorithms within the AOC-2025 repository.
+Create a learning guide that explains the solution logic, algorithms used, and key concepts to help understand and learn from the solution.
 
-## Writing Learning Guides
-1. **Define Objectives**: Clearly outline what the reader will learn by the end of the guide.
-2. **Structure the Guide**: Divide the content into sections with headings for easy navigation. Use bullet points for key takeaways.
-3. **Use Clear Language**: Write in a straightforward manner; avoid jargon unless necessary. Provide explanations when introducing new terms.
-4. **Include Examples**: Real-world examples help illustrate concepts. Always provide code snippets where applicable.
-5. **Encourage Engagement**: Ask questions to the reader to provoke thought and ensure they understand concepts.
+## Instructions
 
-## Documenting Algorithms
-1. **Algorithm Overview**: Start with a brief description of the algorithm, including its purpose and use cases.
-2. **Step-by-Step Explanation**: Break down the algorithm into understandable parts:
-   - **Input**: What inputs does the algorithm accept?
-   - **Process**: Describe how the algorithm works step by step.
-   - **Output**: Explain what the algorithm returns.
-3. **Time and Space Complexity**: Include a section discussing the efficiency of the algorithm in terms of time and storage.
-4. **Visual Aids**: Consider adding flowcharts or diagrams for complex algorithms to enhance understanding.
-5. **References**: If the algorithm is based on existing work, provide citations. 
+1. **Read the following files** in the current day folder:
+   - SPECIFICATION.md - to understand the problem
+   - solution.py - to understand the implementation
+   - test_solution.py - to understand the test cases
 
-By following these guidelines for writing learning guides and documenting algorithms, contributors can enhance the quality and accessibility of project documentation.
+2. **Create a new file called LEARNING.md** in the current day folder with the following sections:
+
+## Learning Guide Structure
+
+Replace XX with the actual day number (e.g., 01, 02).
+
+```markdown
+# Day XX - Learning Guide
+
+## Problem Summary
+A brief summary of what the problem is asking us to solve.
+
+## Key Concepts
+List the main programming concepts or techniques used:
+- Concept 1 (e.g., parsing, string manipulation)
+- Concept 2 (e.g., hash maps, sets)
+- etc.
+
+## Algorithm Explanation
+
+### Part One
+Step-by-step explanation of how the Part One solution works:
+1. First, we...
+2. Then, we...
+3. Finally, we...
+
+### Part Two
+Step-by-step explanation of how the Part Two solution works:
+1. First, we...
+2. Then, we...
+3. Finally, we...
+
+## Code Walkthrough
+Highlight important code snippets and explain what they do.
+
+## Time and Space Complexity
+- Part One: O(?) time, O(?) space
+- Part Two: O(?) time, O(?) space
+
+## What I Learned
+Key takeaways and insights from solving this problem.
+
+## Related Topics
+Links or references to related algorithms, data structures, or concepts for further learning.
+```
+
+3. **Focus on clarity** - write explanations that would help someone new to the problem understand the approach.
+
+4. **Include examples** - use the example inputs/outputs from the specification to illustrate the algorithm steps.
