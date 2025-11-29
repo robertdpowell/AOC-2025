@@ -1,43 +1,37 @@
-# Creating Tests Based on the Specification
+# Create Tests Based on the Specification
 
-## Overview
-This document outlines the process for creating tests based on the given specifications for the project.
+Read the SPECIFICATION.md file in the current day's folder and create comprehensive tests in test_solution.py.
 
-## Steps to Create Tests
+## Instructions
 
-1. **Understand the Specification**  
-   Before creating tests, read the specifications carefully to understand the expected outcomes, inputs, and processes.
+1. **Read the SPECIFICATION.md file** in the current day folder to understand:
+   - The problem description for Part One and Part Two
+   - Example inputs and their expected outputs
+   - Any edge cases or special conditions mentioned
 
-2. **Choose the Testing Framework**  
-   Select a testing framework that is suitable for your project. Options include:
-   - Jest for JavaScript
-   - Pytest for Python
-   - JUnit for Java
+2. **Update test_solution.py** with:
+   - The example input data from the specification in `EXAMPLE_INPUT`
+   - A test for `parse_input()` that verifies input parsing works correctly
+   - A test for `solve_part_one()` using the example input and expected output
+   - A test for `solve_part_two()` using the example input and expected output
+   - Additional edge case tests if any are identified in the specification
 
-3. **Set Up Your Test Environment**  
-   Ensure that your test environment is properly configured to run the tests:
-   - Install dependencies using package managers like npm or pip.
-   - Configure any necessary environment variables.
+3. **Test structure to follow** (replace XX with the actual day number, e.g., 01, 02):
+   ```python
+   class TestDayXX:
+       EXAMPLE_INPUT = """<paste example input here>"""
 
-4. **Write Test Cases**  
-   For each specification, write test cases that cover the following aspects:
-   - **Inputs:** Ensure that all possible inputs are covered in your test cases.
-   - **Edge Cases:** Consider edge cases that might not be covered in the specifications.
-   - **Expected Outcomes:** Clearly define what the expected results should be for given inputs.
+       def test_parse_input(self):
+           result = parse_input(self.EXAMPLE_INPUT)
+           # Assert the parsed structure is correct
 
-5. **Run Tests**  
-   Execute the tests using the chosen framework. Ensure that they pass successfully before moving on.
+       def test_solve_part_one_example(self):
+           expected = <expected_value_from_spec>
+           assert solve_part_one(self.EXAMPLE_INPUT) == expected
 
-6. **Review and Refactor**  
-   Review your tests to ensure they are clear and concise. Refactor where necessary to improve readability and maintainability.
+       def test_solve_part_two_example(self):
+           expected = <expected_value_from_spec>
+           assert solve_part_two(self.EXAMPLE_INPUT) == expected
+   ```
 
-## Example Test Case
-```javascript
-// Example with Jest
-test('should return true for valid input', () => {
-    expect(myFunction('validInput')).toBe(true);
-});
-```
-
-## Conclusion
-Following these instructions will help ensure that your tests are robust and effective based on the specifications provided. 
+4. **Run the tests** with `pytest days/day_XX/ -v` to confirm they fail as expected (since the solution is not yet implemented).
