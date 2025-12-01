@@ -1,35 +1,35 @@
 # Sample 01 - Past Year Advent of Code Puzzle
 
-## Problem Statement
-
-<!-- Paste the problem statement from a past year adventofcode.com puzzle here -->
-
 ### Part One
-
-<!-- Description of Part One -->
-
-### Part Two
-
-<!-- Description of Part Two -->
-
-## Examples
-
-<!-- Include any example inputs and expected outputs from the problem -->
+We have two lists of nummbers
+We need to find the smallest number in each list and note the difference between them.
+then do the same for the second smallest numbers, and so on until we reach the largest numbers in each list.
+Finally, we need to sum all the differences we found.
 
 ### Example Input
-
-```
-```
+3   4
+4   3
+2   5
+1   3
+3   9
+3   3
 
 ### Expected Output (Part One)
+2 + 1 + 0 + 1 + 2 + 5, a total distance of 11
 
-```
-```
+### Part Two
+For each number in the first list, count how many times it appears in the second list then multiply that by the number itself. Sum all these products to get the final result.
 
-### Expected Output (Part Two)
+### Example Input
+3   4
+4   3
+2   5
+1   3
+3   9
+3   3
 
-```
-```
+### Example Output (Part Two)
+31 (9 + 4 + 0 + 0 + 9 + 9)
 
 ## Notes
 

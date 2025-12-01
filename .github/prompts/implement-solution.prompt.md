@@ -23,6 +23,8 @@ Read the SPECIFICATION.md file and implement a solution in solution.py that pass
    - Adjust the implementation accordingly
    - Re-run the tests
    - Repeat until all tests pass
+   - Then run the solution against the actual puzzle input to get the final answers
+   - Tell me the final answers for Part One and Part Two
 
 6. **Code quality:**
    - Keep the code readable and well-documented

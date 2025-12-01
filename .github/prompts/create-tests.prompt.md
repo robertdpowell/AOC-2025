@@ -1,11 +1,11 @@
 # Create Tests Based on the Specification
 
-Read the SPECIFICATION.md file in the current day's folder and create comprehensive tests in test_solution.py.
+Read the SPECIFICATION.md file in the current day's folder and create comprehensive tests in test_solution.py. Bear in mind that part two may not always be present as we need to first complete part one and only then do we have the puzzle for part two.
 
 ## Instructions
 
 1. **Read the SPECIFICATION.md file** in the current day folder to understand:
-   - The problem description for Part One and Part Two
+   - The problem description for Part One or Part Two
    - Example inputs and their expected outputs
    - Any edge cases or special conditions mentioned
 
