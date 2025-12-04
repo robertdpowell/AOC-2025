@@ -6,47 +6,71 @@ from pathlib import Path
 
 
 def parse_input(input_data: str) -> list:
-    """
-    Parse the input data.
+    """Parse comma-separated ranges into list of (start, end) tuples."""
+    if not input_data.strip():
+        return []
     
-    Args:
-        input_data: Raw input string from the puzzle
-        
-    Returns:
-        Parsed data structure
-    """
-    lines = input_data.strip().split('\n')
-    return lines
+    ranges = []
+    for range_str in input_data.strip().split(','):
+        start, end = range_str.strip().split('-')
+        ranges.append((int(start), int(end)))
+    
+    return ranges
+
+
+def has_repeating_pattern(num: int) -> bool:
+    """Check if a number has a pattern that repeats exactly twice."""
+    s = str(num)
+    length = len(s)
+    
+    if length % 2 != 0:
+        return False
+    
+    pattern_len = length // 2
+    pattern = s[:pattern_len]
+    return pattern * 2 == s
 
 
 def solve_part_one(input_data: str) -> int:
-    """
-    Solve Part One of the puzzle.
+    """Find sum of all numbers with repeating patterns in given ranges."""
+    ranges = parse_input(input_data)
+    total = 0
     
-    Args:
-        input_data: Raw input string from the puzzle
-        
-    Returns:
-        Solution to Part One
-    """
-    data = parse_input(input_data)
-    # TODO: Implement solution for Part One
-    raise NotImplementedError("Part One solution not yet implemented")
+    for start, end in ranges:
+        for num in range(start, end + 1):
+            if has_repeating_pattern(num):
+                total += num
+    
+    return total
+
+
+def has_repeating_pattern_at_least_twice(num: int) -> bool:
+    """Check if a number has a pattern that repeats 2 or more times."""
+    s = str(num)
+    length = len(s)
+    
+    for pattern_len in range(1, length // 2 + 1):
+        if length % pattern_len == 0:
+            repetitions = length // pattern_len
+            if repetitions >= 2:
+                pattern = s[:pattern_len]
+                if pattern * repetitions == s:
+                    return True
+    
+    return False
 
 
 def solve_part_two(input_data: str) -> int:
-    """
-    Solve Part Two of the puzzle.
+    """Find sum of all numbers with patterns repeated 2+ times."""
+    ranges = parse_input(input_data)
+    total = 0
     
-    Args:
-        input_data: Raw input string from the puzzle
-        
-    Returns:
-        Solution to Part Two
-    """
-    data = parse_input(input_data)
-    # TODO: Implement solution for Part Two
-    raise NotImplementedError("Part Two solution not yet implemented")
+    for start, end in ranges:
+        for num in range(start, end + 1):
+            if has_repeating_pattern_at_least_twice(num):
+                total += num
+    
+    return total
 
 
 if __name__ == "__main__":

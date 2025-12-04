@@ -1,66 +1,37 @@
-"""
-Advent of Code 2025 - Day 04 Solution
-"""
-import sys
-from pathlib import Path
 
 
-def parse_input(input_data: str) -> list:
-    """
-    Parse the input data.
-    
-    Args:
-        input_data: Raw input string from the puzzle
-        
-    Returns:
-        Parsed data structure
-    """
-    lines = input_data.strip().split('\n')
-    return lines
 
 
-def solve_part_one(input_data: str) -> int:
-    """
-    Solve Part One of the puzzle.
-    
-    Args:
-        input_data: Raw input string from the puzzle
-        
-    Returns:
-        Solution to Part One
-    """
-    data = parse_input(input_data)
-    # TODO: Implement solution for Part One
-    raise NotImplementedError("Part One solution not yet implemented")
 
 
-def solve_part_two(input_data: str) -> int:
-    """
-    Solve Part Two of the puzzle.
-    
-    Args:
-        input_data: Raw input string from the puzzle
-        
-    Returns:
-        Solution to Part Two
-    """
-    data = parse_input(input_data)
-    # TODO: Implement solution for Part Two
-    raise NotImplementedError("Part Two solution not yet implemented")
+def solve1():
+    digits = []
+    with open("input.txt") as f:
+        sum = 0   
+        for line in f.readlines():
+            #ignore last digit
+            digits.append([int(x) for x in line.strip()])
+            
+            #find the highest digit and split there
+            max_digit = max(digits[-1][:-1])
+            index = digits[-1].index(max_digit)
+            first_half = digits[-1][:index+1]
+            second_half = digits[-1][index+1:]
 
+            #get highest digit from each half
+            max_first = max(first_half) 
+            max_second = max(second_half) 
+            highest_digits_str = str(max_first) + str(max_second)
+            sum += int(highest_digits_str)
+    print(sum)
 
-if __name__ == "__main__":
-    # Get input file from command line or use default
-    if len(sys.argv) > 1:
-        input_file = Path(sys.argv[1])
-    else:
-        input_file = Path(__file__).parent / "input.txt"
-    
-    if not input_file.exists():
-        print(f"Error: Input file '{input_file}' not found.")
-        sys.exit(1)
-    
-    puzzle_input = input_file.read_text()
-    
-    print(f"Part One: {solve_part_one(puzzle_input)}")
-    print(f"Part Two: {solve_part_two(puzzle_input)}")
+def solve2():
+    digits = []
+    with open("input.txt") as f:
+        sum = 0   
+        for line in f.readlines():
+            digits.append([int(x) for x in line.strip()])
+           
+      
+    print(sum)
+solve1()
